@@ -57,7 +57,7 @@ contract MerkleAirdrop is EIP712 {
 
     function _isValidSignature(address signer, bytes32 digest, uint8 v, bytes32 r, bytes32 s)
         internal
-        view
+        pure
         returns (bool)
     {
         (address actualSigner,,) = ECDSA.tryRecover(digest, v, r, s);
